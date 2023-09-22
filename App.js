@@ -30,7 +30,7 @@ const Main = () => {
   return (
     <View style={styles.heads}>
       <View style={styles.head}>
-        <Button title="F-LIGHT" disabled={main} onPress={toflight} />
+        <Button title="FLASHLIGHT" disabled={main} onPress={toflight} />
         <Button title="COUNTER" disabled={main} onPress={tocounter} />
       </View>
       <View style={styles.body}>
@@ -39,7 +39,7 @@ const Main = () => {
         {counter && <Counter />}
       </View>
       <View style={styles.btn}>
-        {back && <Button title="BACK" onPress={tomain} />}
+        {back && <Button title="BACK" onPress={tomain} color="green" />}
       </View>
     </View>
   );
@@ -70,7 +70,7 @@ const Flight = () => {
             style={{ width: 150, height: 150, resizeMode: "stretch" ,  marginVertical: 20}}
           />
           }
-     <Button title= {text} onPress={toImage} />
+     <Button title= {text} onPress={toImage} color="green" />
     </View>
   );
 };
@@ -82,13 +82,13 @@ const Counter = () => {
       <Text style={styles.number}>{number}</Text>
       <View style={styles.btnmain}>
         <Button
-          title="-1"
+          title="-1" color="green"
           onPress={() => {
             setNumber(number - 1);
           }}
         />
         <Button
-          title="+1"
+          title="+1" color="green"
           onPress={() => {
             setNumber(number + 1);
           }}
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   head: {
     flexDirection: "row",
     gap: 20,
-    justifyContent: "center",
+    justifyContent: "space-between",
     paddingVertical: 20,
   },
   heads: {
@@ -123,6 +123,7 @@ const styles = StyleSheet.create({
   },
   number: {
     fontSize: 100,
+    fontWeight: 'bold'
   },
   main: {
     flex: 1,
